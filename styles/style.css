@@ -1,4 +1,168 @@
+/* * * * * * * * * *
+ * Root variables  *
+ * * * * * * * * * */
+
+:root {
+	/* Color variables */
+	/* --color-light-1:     #FFFFFF; */
+	
+	/* Size variables */
+	--size-gap: 50px;
+}
+
+/* * * * * * * * *
+ * Body defaults *
+ * * * * * * * * */
+
 body {
-	background-image: url("../assets/images/stripes.png");
+	background-color: #000000; /* Increasingly fancy (but slower to render) backgrounds */
+	background: repeating-linear-gradient(-45deg, #000000 69px, #0F0F0F 138px, #000000 207px);
+	background-image: url("../assets/images/stripes.jpg");
 	color: white;
+	margin: 0;
+	font-family: "Franklin Gothic Medium", sans-serif;
+}
+
+/* * * * * * * * * *
+ * Default classes *
+ * * * * * * * * * */
+
+/* Flexbox defaults */
+.flexVert {
+	height: 100%;
+	display: flex; /* ... obviously :P */
+	flex-direction: column; /* Specifies that elements are placed top-to-bottom */
+	gap: var(--size-gap); /* The gap between the elements in the column */
+}
+.flexVert > * {
+	flex: 1 1 auto; /* Child elements will, by default, grow and shrink with a weight of 1 and a flex-basis of auto */
+}
+
+.flexHorz {
+	width: 100%;
+	display: flex; /* ... obviously :P */
+	flex-direction: row; /* Specifies that elements are placed left-to-right */
+	gap: var(--size-gap); /* The gap between the elements in the row */
+}
+.flexHorz > * {
+	flex: 1 1 auto; /* Child elements will, by default, grow and shrink with a weight of 1 and a flex-basis of auto */
+}
+
+/* * * * * *
+ * Header  *
+ * * * * * */
+ 
+ /* Header */
+#header {
+	background-color: transparent;
+	height: 125px;
+}
+
+/* The logo in the top left */
+#logo {
+	flex-grow: 0;   /* Prevent the logo from growing ... */
+	flex-shrink: 0; /*                  ... or shrinking */
+	width: 125px; /* The width should always be 250px */
+	height: 100%; /* Take up the full height of the header */
+}
+#logoLink {
+	width:  100%; /* Ensure the link takes up the entire parent div */
+	height: 100%; /* Ensure the link takes up the entire parent div */
+	display: inline-block; /* Allows us to set the width and height */
+}
+#logoImg {
+	display: block; /* Make the image a block so we can center it with margin: auto */
+	margin: auto; /* Center the image (relies on display: block) */
+	max-width:  100%; /* Ensure the image fits within the parent */
+	max-height: 100%; /* Not using width/height because they will stretch the image */
+}
+
+/* * * * * * * * * *
+ * Navigation bar  *
+ * * * * * * * * * */
+
+/* The div containing a bunch of links */
+#navbar {
+	display: flex; /* flex display */
+	justify-content: flex-end; /* Left align the links */
+	align-items: center; /* Center the links vertically */
+}
+/* Navbar links (a elements in the navbar) */
+.navbarLink {
+	font-size: 32px;
+	color: black;
+	font-family: "Franklin Gothic Medium", sans-serif;
+	background-color: #D00000; /* Would be inherited from #header anyway, but I want to specify it */
+	padding: 20px 40px 20px 40px; /* Inflate the links a bit to make them like buttons */
+	margin-right: 30px; /* Space the links out (including the rightmost from the right edge of the window) */
+	text-decoration: none; /* Remove the underlines */
+	transition: background-color 0.2s; /* Fade in hover color */
+}
+/* The link for the current page */
+.navbarLink.currentPage {
+	background-color: #800000;
+}
+/* Navbar links on hover */
+.navbarLink:hover {
+	background-color: #E80000; /* Brighten slightly. Animated from .navbarLink */
+}
+/* Navbar links on hover */
+.navbarLink.currentPage:hover {
+	background-color: #990000; /* Brighten slightly. Animated from .navbarLink */
+}
+
+/* * * * * * * * *
+ * Main elements *
+ * * * * * * * * */
+
+#mainHeaderText {
+	text-align: center;
+	font-size: 72px;
+}
+
+.normalText {
+	font-size: 32px;
+	text-align: justify;
+	max-width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* * * * * * * * *
+ * Author footer *
+ * * * * * * * * */
+
+#author {
+	font-size: 20px;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+}
+
+/* * * * * * * * * * * *
+ * Responsive changes  *
+ * * * * * * * * * * * */
+
+/* Small screens */
+@media only screen and (max-width: 1649px) {
+	/* Shrink the links in the navbar */
+	.navbarLink {
+		font-size: 32px;
+		padding: 10px 20px 10px 20px; /* Inflate the links a bit to make them like buttons */
+		margin-right: 20px; /* Space the links out (including the rightmost from the right edge of the window) */
+	}
+}
+
+/* Tiny screens */
+@media only screen and (max-width: 1199px) {
+	/* Shrink the links in the navbar */
+	.navbarLink {
+		font-size: 32px;
+		padding: 10px 20px 10px 20px; /* Inflate the links a bit to make them like buttons */
+		margin-right: 20px; /* Space the links out (including the rightmost from the right edge of the window) */
+	}
+	
+	.normalText {
+		max-width: 75%;
+	}
 }
