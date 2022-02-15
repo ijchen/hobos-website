@@ -1,0 +1,106 @@
+{
+	"players": [
+		{
+			"name": "foobar",
+			"battletag": "FooBar#12345",
+			"role": "tank",
+			"sr": 2300,
+			"hoursPlayed": 420,
+			"level": 69,
+			"mains": [
+				"Reinhardt",
+				"D. Va",
+				"Winston",
+				"Soldier: 76",
+				"Symmetra",
+				"Mercy",
+				"Zenyatta"
+			]
+		},
+		{
+			"name": "Bue",
+			"battletag": "Bue#11823",
+			"role": "dps",
+			"sr": 1650,
+			"hoursPlayed": 80,
+			"level": 93,
+			"mains": [
+				"Mei",
+				"Soldier: 76",
+				"Sombra",
+				"Reinhardt",
+				"Winston",
+				"Mercy",
+				"Ana"
+			]
+		},
+		{
+			"name": "caasinehc",
+			"battletag": "caasinehc#11146",
+			"role": "support",
+			"sr": 1600,
+			"hoursPlayed": 146,
+			"level": 148,
+			"mains": [
+				"Mercy",
+				"Ana",
+				"Moira",
+				"D. Va",
+				"Zarya",
+				"Soldier: 76",
+				"Hanzo"
+			]
+		},
+		{
+			"name": "foobar",
+			"battletag": "FooBar#12345",
+			"role": "tank",
+			"sr": 2300,
+			"hoursPlayed": 420,
+			"level": 69,
+			"mains": [
+				"Zarya",
+				"Reinhardt",
+				"Winston",
+				"Soldier: 76",
+				"Symmetra",
+				"Mercy",
+				"Zenyatta"
+			]
+		},
+		{
+			"name": "foobar",
+			"battletag": "FooBar#11146",
+			"role": "tank",
+			"sr": 2300,
+			"hoursPlayed": 420,
+			"level": 69,
+			"mains": [
+				"Hanzo",
+				"Soldier: 76",
+				"Symmetra",
+				"D. Va",
+				"Winston",
+				"Mercy",
+				"Zenyatta"
+			]
+		},
+		{
+			"name": "foobar",
+			"battletag": "FooBar#12345",
+			"role": "tank",
+			"sr": 2300,
+			"hoursPlayed": 420,
+			"level": 69,
+			"mains": [
+				"Lúcio",
+				"Mercy",
+				"Zenyatta",
+				"D. Va",
+				"Winston",
+				"Soldier: 76",
+				"Symmetra"
+			]
+		}
+	]
+}

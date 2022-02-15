@@ -1,0 +1,54 @@
+#cards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.card {
+	position: relative;
+	border: 12px ridge red;
+	background-color: black;
+	color: white;
+	margin: 52px;
+	width: 350px;
+	height: 600px;
+	box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.25);
+}
+
+.card .cardBackgroundContainer {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+}
+
+.card .cardBackground {
+	filter: blur(4px);
+}
+
+.card .cardName {
+	position: relative;
+	text-align: center;
+	padding: 20px;
+	background-color: rgba(0, 0, 0, 0.75);
+}
+
+.card .cardStats {
+	position: relative;
+	font-size: 24px;
+	padding: 20px;
+	background-color: rgba(0, 0, 0, 0.75);
+}
+
+.card .cardStatsText {
+	margin: 0px;
+}
+
+.card .cardStatsTableHeader {
+	margin: 0px;
+}
+
+.card .cardStatsTable {
+	margin: 0px;
+}
