@@ -134,7 +134,7 @@ function processPlayerData(allPlayerData) {
 	let cards = $(".card");
 	for(let i = 0; i < cards.length; i++) {
 		$(cards[i]).fadeIn(1000 + 500 * i, () => {
-			console.log(cards[i]);
+			$(cards[i]).addClass("highlight");
 		});
 	}
 }

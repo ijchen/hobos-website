@@ -52,10 +52,12 @@
 			"name": "Triple",
 			"battletag": "TRIPLE1615#1376",
 			"role": "tank",
-			"sr": -999,
-			"hoursPlayed": -999,
-			"level": -999,
+			"sr": 1600,
+			"hoursPlayed": 17,
+			"level": 26,
 			"mains": [
+				"Hanzo",
+				"Reaper",
 				"D. Va"
 			]
 		},
