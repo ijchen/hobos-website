@@ -3,7 +3,7 @@ function getProfilePromise(battletag) {
 	// This API does NOT require an API key - it is a public api.
 	return new Promise((resolve, reject) => {
 		// Build the request URL
-		let url = `http://owapi.io/profile/pc/us/${battletag.replace(/#/g, "-")}`;
+		let url = `https://owapi.io/profile/pc/us/${battletag.replace(/#/g, "-")}`;
 		
 		// Fetch the data, cleanly handle the response (even if it fails)
 		fetch(url).then(response => {
