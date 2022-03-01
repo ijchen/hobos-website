@@ -1,3 +1,30 @@
+function getProfilePromise(battletag) {
+	// Uses https://github.com/alfg/overwatch-api
+	// This API does NOT require an API key - it is a public api.
+	return new Promise((resolve, reject) => {
+		// Build the request URL
+		let url = `http://owapi.io/profile/pc/us/${battletag.replace(/#/g, "-")}`;
+		
+		// Fetch the data, cleanly handle the response (even if it fails)
+		fetch(url).then(response => {
+			if(response.status === 200) {
+				response.json().then(data => {
+					// The API will include a "message" field if it couldn't find that profile
+					if("message" in data) {
+						reject(data.message);
+					}
+					
+					// Resolve with the returned data
+					resolve(data);
+				});
+			}
+			else {
+				reject("failed to fetch");
+			}
+		});
+	});
+}
+
 function getHeroImageSource(heroName) {
 	let heroNameMap = {
 		"Ana": "ana",
@@ -75,17 +102,21 @@ function createCardFromData(playerData) {
 	// Stats text
 	let statsElem = document.createElement("div");
 	
-	for(let statString of [
-		`Battletag: ${playerData.battletag}`,
-		`Role: ${playerData.role}`,
-		`SR: ~${playerData.sr}`,
-		`Hours played: ${playerData.hoursPlayed}`,
-		`Level: ${playerData.level}`,
-		"Mains:"
+	for(let statArr of [
+		[`Battletag: ${playerData.battletag}`, []],
+		[`Role: ${playerData.role}`, []],
+		[`SR: ~${playerData.sr}`, []],
+		[`Hours played: ${playerData.hoursPlayed}`, []],
+		[`Level: unknown`, ["level"]],
+		["Mains:", []]
 	]) {
+		let statString = statArr[0];
 		let statP = document.createElement("p");
 		statP.appendChild(document.createTextNode(statString));
-		statP.classList.add("cardStatsText")
+		statP.classList.add("cardStatsText");
+		for(let classToAdd of statArr[1]) {
+			statP.classList.add(classToAdd);
+		}
 		statsElem.append(statP);
 	}
 	
@@ -104,6 +135,12 @@ function createCardFromData(playerData) {
 	
 	// Append cardElem to cardsElem
 	cardsElem.append(cardElem);
+	
+	// Update the level from an API
+	getProfilePromise(playerData.battletag).then(data => {
+		// Update the text inside the level display
+		statsElem.querySelector(".level").innerText = `Level: ${data.level}`;
+	});
 }
 
 function processPlayerData(allPlayerData) {
@@ -115,22 +152,7 @@ function processPlayerData(allPlayerData) {
 	// is not the "correct" way to do this. Trust me this code would not be
 	// disgusting if it weren't for a grade
 	$(".card").hide();
-	const animateNext = (() => {
-		// basically made a rust iterator because my assignment is weird
-		let idx = 0;
-		let cards = $(".card").get();
-		
-		const f = () => {
-			if(idx < cards.length) {
-				// $(cards[idx]).fadeIn(500, f);
-				$(cards[idx]).slideDown(500, f);
-				
-				idx++;
-			}
-		}
-		
-		return f;
-	})();
+	
 	let cards = $(".card");
 	for(let i = 0; i < cards.length; i++) {
 		$(cards[i]).fadeIn(1000 + 500 * i, () => {
@@ -139,10 +161,35 @@ function processPlayerData(allPlayerData) {
 	}
 }
 
+function getPlayerData(src) {
+	// I could do this in one line, but we were asked to use XMLHttpRequest() so ok
+	// return fetch(src).then(response => response.json());
+	
+	return new Promise((resolve, reject) => {
+		let xmlHttpReq = new XMLHttpRequest();
+		xmlHttpReq.open("GET", src, true);
+		
+		// When the request loads
+		xmlHttpReq.addEventListener("load", () => {
+			if(xmlHttpReq.status === 200) {
+				resolve(xmlHttpReq.response);
+			}
+			else {
+				reject(xmlHttpReq.statusText);
+			}
+		});
+		// If the request returns an error
+		xmlHttpReq.addEventListener("error", () => {
+			reject(xmlHttpReq.statusText);
+		});
+		
+		xmlHttpReq.send();
+	});
+}
+
 function main() {
-	fetch("assets/data/roster.json")
-		.then(response => response.json())
-		.then(processPlayerData);
+	getPlayerData("assets/data/roster.json")
+		.then(data => processPlayerData(JSON.parse(data)));
 }
 
 $(main);

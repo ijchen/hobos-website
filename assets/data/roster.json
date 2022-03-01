@@ -6,7 +6,6 @@
 			"role": "flex/tank",
 			"sr": 1650,
 			"hoursPlayed": 80,
-			"level": 93,
 			"mains": [
 				"Reinhardt",
 				"Mei",
@@ -23,7 +22,6 @@
 			"role": "flex/dps",
 			"sr": 2300,
 			"hoursPlayed": 235,
-			"level": 229,
 			"mains": [
 				"Soldier: 76",
 				"Reaper",
@@ -38,10 +36,10 @@
 			"role": "support",
 			"sr": 1600,
 			"hoursPlayed": 146,
-			"level": 148,
 			"mains": [
-				"Mercy",
 				"Ana",
+				"Mercy",
+				"Baptiste",
 				"D. Va",
 				"Zarya",
 				"Hanzo",
@@ -54,7 +52,6 @@
 			"role": "tank",
 			"sr": 1600,
 			"hoursPlayed": 17,
-			"level": 26,
 			"mains": [
 				"D. Va",
 				"Hanzo",
@@ -67,7 +64,6 @@
 			"role": "dps",
 			"sr": 1500,
 			"hoursPlayed": 221,
-			"level": 220,
 			"mains": [
 				"Echo",
 				"Ana",
@@ -81,7 +77,6 @@
 			"role": "support",
 			"sr": 1800,
 			"hoursPlayed": 74,
-			"level": 61,
 			"mains": [
 				"Lúcio",
 				"Mercy",
