@@ -4,23 +4,24 @@
 			"name": "Bue",
 			"battletag": "Bue#11823",
 			"role": "flex/tank",
-			"sr": 1650,
+			"sr": 2000,
 			"hoursPlayed": 80,
 			"mains": [
+				"D. Va",
+				"Zarya",
 				"Reinhardt",
 				"Mei",
 				"Soldier: 76",
 				"Sombra",
 				"Winston",
-				"Mercy",
-				"Ana"
+				"Mercy"
 			]
 		},
 		{
 			"name": "Double1971",
 			"battletag": "Double1971#1164",
 			"role": "flex/dps",
-			"sr": 2300,
+			"sr": 2500,
 			"hoursPlayed": 235,
 			"mains": [
 				"Soldier: 76",
@@ -34,12 +35,12 @@
 			"name": "caasinehc",
 			"battletag": "caasinehc#11146",
 			"role": "support",
-			"sr": 1600,
+			"sr": 2100,
 			"hoursPlayed": 146,
 			"mains": [
-				"Ana",
-				"Mercy",
 				"Baptiste",
+				"Mercy",
+				"Ana",
 				"D. Va",
 				"Zarya",
 				"Hanzo",
@@ -61,21 +62,22 @@
 		{
 			"name": "Prosien",
 			"battletag": "prosien#1581",
-			"role": "dps",
-			"sr": 1500,
+			"role": "support",
+			"sr": 1800,
 			"hoursPlayed": 221,
 			"mains": [
-				"Echo",
+				"Lúcio",
 				"Ana",
+				"Mercy",
 				"Baptiste",
-				"Lúcio"
+				"Echo"
 			]
 		},
 		{
 			"name": "Wifi",
 			"battletag": "HoboWifi#1104",
 			"role": "support",
-			"sr": 1800,
+			"sr": 1300,
 			"hoursPlayed": 74,
 			"mains": [
 				"Lúcio",
